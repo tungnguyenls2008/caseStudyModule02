@@ -90,14 +90,18 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $item['id'] ?></td>
                                 <td><?php echo $item['borrow_time'] ?></td>
                                 <td><?php echo $item['user_id'] ?></td>
-                                <td><?php echo $item['username'] ?></td>
+                                <td>
+                                    <a href="../user/profile.php?id=<?php echo $item['user_id'] ?>"> <?php echo $item['username'] ?></a>
+                                </td>
                                 <td><?php if ($item['member_status'] == 0) {
                                         echo '<p style="color: #00A000">Active</p>';
                                     } else {
                                         echo '<p style="color: #9A0000">Blocked</p>';
                                     } ?></td>
                                 <td><?php echo $item['book_id'] ?></td>
-                                <td><?php echo $item['book_name'] ?></td>
+                                <td>
+                                    <a href="../book/profile.php?id=<?php echo $item['book_id'] ?>"> <?php echo $item['book_name'] ?></a>
+                                </td>
                                 <td><?php if ($item['book_status'] == 1) {
                                         echo '<p style="color: #00A000"> Available</p>';
                                     } else {
@@ -105,7 +109,8 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                     } ?></td>
                                 <td><?php if ($_SESSION['user']['role'] == 1): ?>
                                         <a class="btn btn-primary"
-                                           href="../../model/borrow/delete.php?id=<?php echo $item['id'] ?>">Book returned, move to ticket
+                                           href="../../model/borrow/delete.php?id=<?php echo $item['id'] ?>">send to
+                                            ticket
                                             dump</a><br>
                                     <?php endif; ?></td>
 
@@ -122,7 +127,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php endif; ?>
     </div>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>
 </html>

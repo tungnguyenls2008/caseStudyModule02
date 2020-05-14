@@ -131,7 +131,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 </div>
 <?php } else : echo "You're blocked from reaching this information, please contact site admin for details.";
 endif; ?>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>
 </html>

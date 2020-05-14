@@ -121,7 +121,7 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>
 </html><?php

@@ -95,7 +95,7 @@ if (!isset($_SESSION['book'])) {
                         <?php foreach ($results as $key => $item): ?>
                             <tr>
                                 <td><?php echo ++$key ?></td>
-                                <td><?php echo $item['name'] ?></td>
+                                <td><a href="profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a></td>
                                 <td><?php if ($item['status'] == 1) {
                                         echo 'Available';
                                     } else {
@@ -108,9 +108,8 @@ if (!isset($_SESSION['book'])) {
                                         <a class="btn btn-primary" href="updateForm.php?id=<?php echo $item['id'] ?>">Update</a>
                                     <?php endif; ?>
                                     <?php if ($_SESSION['user']['role'] == 0): ?>
-                                        <a class="btn btn-primary"
-                                           href="../borrow/borrowForm.php?id=<?php echo $item['id'] ?>">Borrow this
-                                            book</a><br>
+                                        <a class="btn btn-outline-primary"
+                                        >Book ID: <?php echo $item['id'] ?></a><br>
                                     <?php endif; ?>
 
                                 </td>
@@ -126,7 +125,7 @@ if (!isset($_SESSION['book'])) {
         </div>
     </div>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>
 </html>

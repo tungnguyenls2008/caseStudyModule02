@@ -32,7 +32,7 @@ $resultBookCount = $queryBook->fetch();
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body >
 
 <?php include "../view/nav.php"; ?>
 <!------ Include the above in your HEAD tag ---------->
@@ -69,7 +69,7 @@ $resultBookCount = $queryBook->fetch();
         </div>
     </div>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../js/background.js"></script>
 </body>
 </html>

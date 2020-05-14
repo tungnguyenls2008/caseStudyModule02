@@ -46,7 +46,7 @@ function getRandomColor(){
     return "rgb(" + red + "," + blue + "," + green +")";
 }
 function createMultipleCircle(){
-    for(let i = 0; i < 30; i++){
+    for(let i = 0; i < 50; i++){
         let radius = Math.floor(Math.random() * 80);
         let color = getRandomColor();
         let x = Math.random() * window.innerWidth;

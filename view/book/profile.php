@@ -27,7 +27,8 @@ $book = $stmt->fetch();
 </head>
 
 <body>
-
+<?php session_start();
+include "../nav.php";?>
 
 <div class="container">
     <div class="card">
@@ -75,7 +76,7 @@ $book = $stmt->fetch();
         </div>
     </div>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>
 </html>

@@ -92,9 +92,9 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
                     <tr>
                         <td>
-                            <input type="number" name="user-id" placeholder="Search for ID"
+                            <input type="number" name="user-id" placeholder="Type the ID"
                                    value="<?php echo (isset($_POST['user-id'])) ? $_POST['user-id'] : '' ?>">
-                            <input type="submit" name="search" value="SEARCH ID">
+                            <!--<input type="submit" name="search" value="SEARCH ID">-->
                             <?php if (!empty($_REQUEST['user-id'])): {
                                 $keyword = $_REQUEST['user-id'];
                                 $sql = "SELECT * FROM `member` WHERE `mem_id` LIKE '%$keyword%' ";
@@ -114,7 +114,8 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <?php foreach ($results as $key => $item): ?>
                                     <tr>
                                         <td><?php echo $item['mem_id'] ?></td>
-                                        <td><?php echo $item['username'] ?></td>
+                                        <td><a href="../user/profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
+                                        </td>
                                         <td><?php if ($item['role'] == 1) {
                                                 echo 'Admin';
                                             } else {
@@ -153,9 +154,11 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
                                 <?php foreach ($results as $key => $item): ?>
                                     <tr>
-                                        <td><input type="checkbox" name="borrow-this" value="<?php echo $item['id'] ?>">
-                                        </td>
-                                        <td><?php echo $item['name'] ?></td>
+                                        <td><a class="btn btn-outline-primary mr-5"
+                                               href="../../model/borrow/borrow.php?user-id=<?php echo $_POST['user-id'] ?>&borrow-this=<?php echo $item['id'] ?>">BORROW THIS</a></td>
+<!--                                        <td><input type="radio" name="borrow-this" value="--><?php //echo $item['id'] ?><!--">-->
+<!--                                        </td>-->
+                                        <td><a href="../book/profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a></td>
                                         <td><?php if ($item['status'] == 1) {
                                                 echo '<p style="color: #00A000"> Available</p>';
                                             } else {
@@ -174,11 +177,11 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <table>
                 <tr>
-                    <td>
+                    <!--<td>
                         <a class="btn btn-primary mr-5"
-                           href="../../model/borrow/borrow.php?user-id=<?php echo $_POST['user-id'] ?>&borrow-this=<?php echo $_POST['borrow-this'] ?>">MAKE
+                           href="../../model/borrow/borrow.php?user-id=<?php /*echo $_POST['user-id'] */?>&borrow-this=<?php /*echo $_POST['borrow-this'] */?>">MAKE
                             BORROW ORDER</a>
-                    </td>
+                    </td>-->
                     <td><a class="btn btn-primary mr-5" href="../home.php">Back to home</a></td>
                     <td><a class="btn btn-danger mr-5" href="../../model/user/logout.php">Logout</a></td>
                 </tr>
@@ -186,7 +189,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>
 </html><?php } endif; ?>

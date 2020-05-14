@@ -7,12 +7,24 @@
 
 <?php
 session_start();
+//include '../nav.php';
 include '../../model/connection/conn.php';
 $userID = $_REQUEST['id'];
 $sql = "SELECT * FROM member WHERE `mem_id`='$userID' ";
 $stmt = $conn->query($sql);
 $user = $stmt->fetch();
 ?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
 <div class="container emp-profile">
     <form method="post">
         <div class="row">
@@ -117,17 +129,19 @@ $user = $stmt->fetch();
                             </div>
                         </div>
                         <div class="row">
-                            <a href="display.php" class="btn btn-primary">Back to users list</a>
+                            <a href="display.php" class="btn btn-primary" style="size: A3">Back to users list</a>
                             <?php if ($_SESSION['user']['role'] == 1):{ ?>
                                 <a class="btn btn-danger"
-                                   href="../../model/user/delete.php?id=<?php echo $user['mem_id'] ?>">Delete</a>
+                                   href="../../model/user/delete.php?id=<?php echo $user['mem_id'] ?>" style="size: A3">Delete</a>
                                 <?php if ($user['status'] == 0): ?>
                                     <a class="btn btn-danger"
-                                       href="../../model/user/block.php?id=<?php echo $user['mem_id'] ?>">Block</a>
+                                       href="../../model/user/block.php?id=<?php echo $user['mem_id'] ?>"
+                                       style="size: A3">Block</a>
 
                                 <?php elseif ($user['status'] == 1): ?>
                                     <a class="btn btn-secondary"
-                                       href="../../model/user/unblock.php?id=<?php echo $user['mem_id'] ?>">Unblock</a>
+                                       href="../../model/user/unblock.php?id=<?php echo $user['mem_id'] ?> "
+                                       style="size: A3">Unblock</a>
                                 <?php endif;
                             } ?>
                             <?php endif; ?>
@@ -187,5 +201,7 @@ $user = $stmt->fetch();
         </div>
     </form>
 </div>
-<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
+</body>
+</html>

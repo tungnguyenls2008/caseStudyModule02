@@ -21,7 +21,7 @@ if (isset($_POST['add'])) {
         }
 
         $conn = null;
-        header('location:../../view/book/display.php');
+        header('location:../../view/book/profile.php?id='.$id);
     } else {
         echo "
 				<script>alert('Please fill up the required field!')</script>

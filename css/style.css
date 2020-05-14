@@ -5,6 +5,13 @@ canvas{
     top:0;
     z-index:-1;
     width: 1368px;
-    height: 768px
+    height: 768px;
 
+}
+html {
+
+    font-size: 1.2em;
+}
+th,td{
+    font-size: 1.5em;
 }
