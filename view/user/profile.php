@@ -61,7 +61,7 @@ $user = $stmt->fetch();
                 </div>
             </div>
             <div class="col-md-2">
-                <?php if ($_SESSION['user']['role'] == 1): ?>
+                <?php if ($_SESSION['user']['role'] == 1||$_SESSION['user']['mem_id']==$userID): ?>
                     <a class="btn btn-primary" name="btnAddMore" href="updateForm.php?id=<?php echo $userID ?>">Edit
                         Profile</a>
                 <?php endif; ?>

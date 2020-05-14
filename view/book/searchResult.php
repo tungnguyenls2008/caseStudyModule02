@@ -73,7 +73,7 @@ if (!isset($_SESSION['book'])) {
                 <form style="width: auto;margin: auto" method="post">
                     <input type="text" name="keyword" placeholder="search"
                            value="<?php echo (isset($_POST['keyword'])) ? $_POST['keyword'] : '' ?>">
-                    <input type="submit" name="search" value="SEARCH">
+                    <input type="submit" name="search" value="SEARCH"><br>
                     <?php if (isset($_POST['search'])) {
                         $keyword = $_POST['keyword'];
                         $sql = "SELECT * FROM `books` WHERE `name` LIKE '%$keyword%'";
@@ -81,9 +81,14 @@ if (!isset($_SESSION['book'])) {
                         $query->execute();
                         $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
-                    } ?>
+                    } ?><table style="display: inline-block;text-align: left"><tr>
                     <?php if ($_SESSION['user']['role'] == 1): ?>
-                        <a class="btn btn-primary" href="addForm.php">ADD NEW BOOK</a><?php endif; ?>
+                        <td><a class="btn btn-primary" href="addForm.php">ADD NEW BOOK</a></td>
+                        <td><a class="btn btn-warning" href="../../model/book/addRandomBook.php">Add random book</a></td>
+                        <?php endif; ?>
+                    <td><a class="btn btn-primary" href="../home.php">Back to home</a></td>
+                    <td><a class="btn btn-danger" href="../../model/user/logout.php">Logout</a></td>
+                        </tr></table>
                     <table class="gridtable" border="1px">
                         <tr>
                             <th>No.</th>
@@ -95,7 +100,8 @@ if (!isset($_SESSION['book'])) {
                         <?php foreach ($results as $key => $item): ?>
                             <tr>
                                 <td><?php echo ++$key ?></td>
-                                <td><a href="profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a></td>
+                                <td><a href="profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a>
+                                </td>
                                 <td><?php if ($item['status'] == 1) {
                                         echo 'Available';
                                     } else {
@@ -104,7 +110,8 @@ if (!isset($_SESSION['book'])) {
                                 <td>
                                     <?php if ($_SESSION['user']['role'] == 1): ?>
                                         <a class="btn btn-danger"
-                                           href="../../model/book/delete.php?id=<?php echo $item['id'] ?>">Delete</a><br>
+                                           href="../../model/book/delete.php?id=<?php echo $item['id'] ?>">Delete</a>
+                                        <br>
                                         <a class="btn btn-primary" href="updateForm.php?id=<?php echo $item['id'] ?>">Update</a>
                                     <?php endif; ?>
                                     <?php if ($_SESSION['user']['role'] == 0): ?>
@@ -118,10 +125,7 @@ if (!isset($_SESSION['book'])) {
                     </table>
                 </form>
             </div>
-            <?php if ($_SESSION['user']['role'] == 1): ?>
-                <a class="btn btn-primary" href="../../model/book/addRandomBook.php">Add random book</a><br><?php endif; ?>
-            <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a>
-            <a class="btn btn-primary" href="../home.php">Back to home</a>
+
         </div>
     </div>
 </div>

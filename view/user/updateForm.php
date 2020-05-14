@@ -20,7 +20,7 @@ $user = $stmt->fetch();
 ?>
 <?php include "../nav.php"; ?>
 
-
+<?php if ($_SESSION['user']['role']==1||$_SESSION['user']['mem_id']==$userID): ?>
 <div class="container" style="text-align: center">
     <div class="col-md-12 well" style="display: inline-block">
         <h3 class="text-primary">User profile update</h3>
@@ -85,6 +85,7 @@ $user = $stmt->fetch();
         </div>
     </div>
 </div>
+<?php endif; ?>
 <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>
 </body>

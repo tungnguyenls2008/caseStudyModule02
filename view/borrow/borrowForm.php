@@ -13,7 +13,7 @@ $query->execute();
 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"/>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
@@ -65,7 +65,6 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 <?php include "../nav.php"; ?>
 
 
-
 <div class="container" style="text-align: center">
     <div class="col-md-12 well" style="display: inline-block">
         <h3 class="text-primary">MAKE BORROW ORDER</h3>
@@ -92,7 +91,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
                     <tr>
                         <td>
-                            <input type="number" name="user-id" placeholder="Type the ID"
+                            <input type="number" name="user-id" placeholder="Enter member ID"
                                    value="<?php echo (isset($_POST['user-id'])) ? $_POST['user-id'] : '' ?>">
                             <!--<input type="submit" name="search" value="SEARCH ID">-->
                             <?php if (!empty($_REQUEST['user-id'])): {
@@ -114,7 +113,8 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <?php foreach ($results as $key => $item): ?>
                                     <tr>
                                         <td><?php echo $item['mem_id'] ?></td>
-                                        <td><a href="../user/profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
+                                        <td>
+                                            <a href="../user/profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
                                         </td>
                                         <td><?php if ($item['role'] == 1) {
                                                 echo 'Admin';
@@ -144,7 +144,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
                             } ?>
-                                <table class="gridtable" border="1px">
+                            <table class="gridtable" border="1px">
                                 <tr>
                                     <th>Check</th>
                                     <th>Name</th>
@@ -155,10 +155,11 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <?php foreach ($results as $key => $item): ?>
                                     <tr>
                                         <td><a class="btn btn-outline-primary mr-5"
-                                               href="../../model/borrow/borrow.php?user-id=<?php echo $_POST['user-id'] ?>&borrow-this=<?php echo $item['id'] ?>">BORROW THIS</a></td>
-<!--                                        <td><input type="radio" name="borrow-this" value="--><?php //echo $item['id'] ?><!--">-->
-<!--                                        </td>-->
-                                        <td><a href="../book/profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a></td>
+                                               href="../../model/borrow/borrow.php?user-id=<?php echo $_POST['user-id'] ?>&borrow-this=<?php echo $item['id'] ?>">BORROW
+                                                THIS</a></td>
+                                        <td>
+                                            <a href="../book/profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a>
+                                        </td>
                                         <td><?php if ($item['status'] == 1) {
                                                 echo '<p style="color: #00A000"> Available</p>';
                                             } else {
@@ -167,30 +168,26 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
                                     </tr>
                                 <?php endforeach; ?>
+                                <?php endif; ?></table>
+                                <tr>
+                                    <td><a class="btn btn-primary mr-5" href="../home.php">Back to home</a></td>
+                                    <td><a class="btn btn-danger mr-5" href="../../model/user/logout.php">Logout</a>
+                                    </td>
+                                </tr>
 
 
-                                </table><?php endif; ?>
-                        </td>
-                    </tr>
-
+                </tr>
                 </form>
             </div>
-            <table>
-                <tr>
-                    <!--<td>
-                        <a class="btn btn-primary mr-5"
-                           href="../../model/borrow/borrow.php?user-id=<?php /*echo $_POST['user-id'] */?>&borrow-this=<?php /*echo $_POST['borrow-this'] */?>">MAKE
-                            BORROW ORDER</a>
-                    </td>-->
-                    <td><a class="btn btn-primary mr-5" href="../home.php">Back to home</a></td>
-                    <td><a class="btn btn-danger mr-5" href="../../model/user/logout.php">Logout</a></td>
-                </tr>
-            </table>
+            <div>
+                <table>
+
+                </table>
+            </div>
         </div>
     </div>
-</div>
-<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
-<script src="../../js/background.js"></script>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script src="../../js/background.js"></script>
 </body>
 </html><?php } endif; ?>
 

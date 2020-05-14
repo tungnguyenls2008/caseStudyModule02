@@ -69,11 +69,13 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                 <h4><?php echo 'hi there ' . $fetch['firstname'] . " " . $fetch['lastname'] ?></h4></div>
             <?php if ($_SESSION['user']['status'] == 0):{ ?>
             <h5>This is a list of registered user, nothing important, really.</h5>
+            <a class="btn btn-secondary" href="searchResult.php">SEARCH</a>
+            <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a>
+            <a class="btn btn-primary" href="../home.php">Back to home</a></div>
             <div><?php if ($_SESSION['user']['role'] == 1): ?>
-                    <a class="btn btn-secondary" href="searchResult.php">SEARCH</a>
+
                     <a class="btn btn-primary" href="../../model/user/addRandomUser.php">Add random user</a> <?php endif; ?>
-                <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a>
-                <a class="btn btn-primary" href="../home.php">Back to home</a></div>
+
             <div style="display: inline-block;">
                 <form method="post">
                     <br>

@@ -98,7 +98,8 @@ if (!isset($_SESSION['user'])) {
                                 <td><?php echo ++$key ?></td>
                                 <td><?php echo $item['firstname'] ?></td>
                                 <td><?php echo $item['lastname'] ?></td>
-                                <td><?php echo $item['username'] ?></td>
+                                <td><a href="../user/profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
+                                </td>
                                 <td><?php if ($item['role'] == 1) {
                                         echo 'Admin';
                                     } else {

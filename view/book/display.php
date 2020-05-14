@@ -86,11 +86,11 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                 <form method="post">
                     <a class="btn btn-secondary" href="searchResult.php">SEARCH</a>
                     <?php if ($_SESSION['user']['role'] == 1): ?>
-                        <a class="btn btn-primary" href="addForm.php">ADD NEW BOOK</a><?php endif; ?>
-                    <?php if ($_SESSION['user']['role'] == 1): ?>
-                        <a class="btn btn-primary" href="../../model/book/addRandomBook.php">Add random book</a><?php endif; ?>
-                    <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a>
+                        <a class="btn btn-primary" href="addForm.php">ADD NEW BOOK</a>
+                        <a class="btn btn-warning" href="../../model/book/addRandomBook.php">Add random
+                            book</a><?php endif; ?>
                     <a class="btn btn-primary" href="../../view/home.php">Back to home</a>
+                    <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a>
                     <table class="gridtable" border="1px" style="margin: auto">
                         <tr>
                             <th>No.</th>
@@ -114,7 +114,8 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <td>
                                     <?php if ($_SESSION['user']['role'] == 1): ?>
                                         <a class="btn btn-danger"
-                                           href="../../model/book/delete.php?id=<?php echo $item['id'] ?>">Delete</a><br>
+                                           href="../../model/book/delete.php?id=<?php echo $item['id'] ?>">Delete</a>
+                                        <br>
                                         <a class="btn btn-primary" href="updateForm.php?id=<?php echo $item['id'] ?>">Update</a>
                                     <?php endif; ?>
                                     <?php if ($_SESSION['user']['role'] == 0): ?>
@@ -132,8 +133,8 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
-<?php } else : echo "You're blocked from reaching this information, please contact site admin for details.";
-endif; ?>
+    <?php } else : echo "You're blocked from reaching this information, please contact site admin for details.";
+    endif; ?>
 
 <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>

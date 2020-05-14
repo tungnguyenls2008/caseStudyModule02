@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../../model/connection/conn.php';
-if ($_SESSION['user']['role'] == 1) {
+if ($_SESSION['user']['role'] == 1||$_SESSION['user']['mem_id']==$_REQUEST['id']) {
     if (isset($_POST['update'])) {
 
             try {
