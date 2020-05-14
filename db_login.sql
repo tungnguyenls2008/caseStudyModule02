@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 14, 2020 at 08:14 AM
+-- Generation Time: May 14, 2020 at 10:03 AM
 -- Server version: 10.3.22-MariaDB-1
 -- PHP Version: 7.3.15-3
 
@@ -42,12 +42,10 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `name`, `author`, `category`, `cover`, `description`, `status`) VALUES
-(51, 'Bí kíp làm giàu của anh Huấn hoa hẹo', 'huấn rose', 'drama', NULL, 'sách đéo gì cái loại này???', 1),
+(51, 'Bí kíp làm giàu của anh Huấn hoa hẹo', 'huấn rose', 'action-adventure', NULL, 'sách đéo gì cái loại này???', 1),
 (52, 'kinh doanh online cùng anh huấn hoa hòe', '', '', '', '', 1),
 (58, 'fhfgh', 'dfgdfg', 'crime-detective', '', 'sdfsgs', 1),
 (59, 'nhyo ter shei string ', 'straia chay zheight ', '2', NULL, 'trya bring nguyen ting nghang gher nhang trieu ngyo her zhuyen nhung hieu bryo hai ', 1),
-(60, 'ching hon brer giung ', 'strei ting hya ', '5', NULL, 'trer zhai ngieu zhai giung thai trinh sheight wheight brai nhung chung nhuyen tya nhya ', 1),
-(61, 'tray shieu ngher truyen ', 'ther nhyo ngyo ', 'comic-graphic', NULL, 'wher ghai tyo tyo nhei trung thung thya hei zhang strya ghay traia whei sheight ', 1),
 (62, '111', '111', 'comic-graphic', '', '111', 1),
 (63, 'nghon chay nghai traia ', 'chyo thing whinh ', 'drama', NULL, 'sher tung tieu whyo whuyen hung nghang chon breight giaia thang nghang traia hai gheight ', 1),
 (64, 'thai sher stron shon ', 'brung giung thuyen ', 'action-adventure', NULL, 'chay trung tyo chuyen thing hya giieu shang whyo gheight tai thay ghyo ngang whieu ', 1),
@@ -61,7 +59,26 @@ INSERT INTO `books` (`id`, `name`, `author`, `category`, `cover`, `description`,
 (72, 'zhay strai whang tya ', 'sher ngher nhyo ', 'crime-detective', NULL, 'nhieu nhung string theight strei her brieu hei ghing ghai giyo brer thinh stryo nghinh thung brung thay teight thei shinh ter tya thang shung ', 1),
 (73, 'zhung gher thai tya ', 'tron shang ngheight ', 'action-adventure', NULL, 'giyo shung whieu nger hung chai nhung shieu ghang shai zhinh breight nhaia whieu straia tung giaia zhai chai gieight hieu height strer braia strung ', 1),
 (74, 'shya whaia thai thinh ', 'ghai thieu stron ', 'fairy-tale', NULL, 'trieu nhei zheight gier strieu zher hang nginh tron hinh strai strang nhuyen theight ngeight tyo zher shaia zhing nhieu trinh traia bray brer gheight ', 1),
-(75, 'zhon hieu wher stron ', 'bring chai hieu ', 'drama', NULL, 'zhei brang nhya wheight nhing tring ghya gher thay chinh nhaia brya nghing shieu zhinh zhon zhai nghay her nghya chaia hai ngyo hai struyen ', 1);
+(75, 'zhon hieu wher stron ', 'bring chai hieu ', 'drama', NULL, 'zhei brang nhya wheight nhing tring ghya gher thay chinh nhaia brya nghing shieu zhinh zhon zhai nghay her nghya chaia hai ngyo hai struyen ', 1),
+(76, 'thung ghay ghing nhing ', 'shei gheight whon ', 'action-adventure', NULL, 'nghieu zhaia thai brai whei bray brer nghinh theight chaia whung shay ghing hang zheight brung truyen nghai nhon gieight shay hung gieight straia teight ', 1),
+(77, 'trer huyen shieu ngyo ', 'sher breight trieu ', 'classic', NULL, 'trang whinh zhuyen string ter thing thuyen tieu zhyo strung nheight hon stryo giing trieu thai nhai tung zhai nhon strer strung chuyen nging zhuyen ', 1),
+(78, 'thieu zhing whon trinh ', 'strieu ghei whuyen ', 'crime-detective', NULL, 'tung hon shya zhung whieu ghay giya nhuyen gheight giung huyen ghay hang shieu gier hieu shing tray zhung nginh shai thaia whinh wheight brung ', 1),
+(79, 'ngher shieu chung chay ', 'nhang stryo shung ', 'drama', NULL, 'nghung giuyen thaia zhuyen nhung thei ngei shang hya zhuyen nghya thay brya chay strya gier giang tyo nhung ghon trya tung ther ghya shieu ', 1),
+(80, 'nhya tron taia trei ', 'ghaia giya nghay ', 'action-adventure', NULL, 'giyo chaia string nhinh stryo trang ghyo zhei shai ter brinh ghuyen tinh chai thieu nhung hang hing nghyo whai strei stray chei zhung nghing ', 1),
+(81, 'whei ngher hung zhieu ', 'teight whieu string ', 'drama', NULL, 'ngung sher giung nher strieu nheight chon nhei hay whay tray whuyen tron nhya struyen sheight chai tryo thuyen ghung hei chang thon nghaia nhieu ', 1),
+(82, 'ghinh nheight nhing strei ', 'ghei brieu tray ', 'fairy-tale', NULL, 'zhya nghon nguyen zhon tryo shang gher her giai shon ghai zhung giuyen nger chung ghang trai shay trang nghya tryo hyo whai ghang stron ', 1),
+(83, 'hya thuyen ton trer ', 'gier tryo trei ', 'drama', NULL, 'nguyen ngon ngya whieu thieu shai nghon ngeight nghyo trang nhai brinh shaia stron trinh cheight zhya ghing shon cheight nhang nhieu ton chai nghya ', 1),
+(84, 'shai ngai whay ghya ', 'zhung hing thing ', 'classic', NULL, 'chaia nghai ghaia thai shya whang bryo tya thinh ngang whuyen zhyo traia shei bring whai ngang nhinh sher thieu nghaia braia ngei giieu brang ', 1),
+(85, 'hai ghung cheight trinh ', 'zhya nghaia ngaia ', 'crime-detective', NULL, 'nghaia ngher strya haia nghinh trya bray whuyen bryo nhyo nhung trer bray tryo shinh ghieu nghon whung nhai thinh giieu string string whyo chung ', 1),
+(86, 'ter string thang nghai ', 'ngaia giieu nhinh ', 'action-adventure', NULL, 'trang traia nghyo shai bring nghung theight giung nhay shang trieu ngang strer tay nging nhang ghinh whya nheight tai truyen strieu trei tryo brya ', 1),
+(87, 'bray whung stron ghyo ', 'ngai theight whuyen ', 'crime-detective', NULL, 'brer nghinh zhang chuyen zhyo ngei tei chung nging giuyen hung giung theight hay chung straia trya teight ngay ghinh ghang shuyen strer ghinh zhang ', 1),
+(88, 'giing nghuyen shuyen treight ', 'ghay whuyen nger ', 'fairy-tale', NULL, 'nginh whuyen nghai bruyen ghyo ghya nhaia nhay whai nginh sher ngheight streight thuyen thang thang brieu chei height giaia nhaia gier shyo hei chon ', 1),
+(89, 'strai nhinh chuyen zhinh ', 'shuyen stray strang ', 'fairy-tale', NULL, 'thaia tyo chyo zhung ting stryo wher nhaia zhay tang shon chang trer zheight tei ghuyen nhang brya chyo brya strinh whai chuyen gieight tung ', 1),
+(90, 'hyo ngang hinh tryo ', 'thung nghya brinh ', 'action-adventure', NULL, 'haia stron ting ngher chay whaia thaia shing ngyo thinh straia thei hya gion trung thung huyen giaia hya nhieu nguyen nghuyen thung chieu shieu ', 1),
+(91, 'brai hang nher treight ', 'hyo tryo nghung ', 'comic-graphic', NULL, 'brung zhieu straia nhung thaia shaia chung thung tray shang chung ghya hing nhung ghung giya chinh sheight bring brang zhei brieu ngaia thing ngung ', 1),
+(92, 'trer struyen hya nhing ', 'trei whay brya ', 'crime-detective', NULL, 'chei zhya strer trya tang struyen ghyo nhing giay chya tung gieight nghang gion shieu giing ghyo sheight trer tron whai giei thung giing hung ', 1),
+(93, 'hung nher stryo chang ', 'brai tay tang ', 'comic-graphic', NULL, 'whung cher hing traia zhai ghai zhaia chuyen shang brai bray whai zhyo ngei hieu ngyo whaia brya hieu bruyen brang trai strai nging theight ', 1),
+(94, 'Case qúa đỉnh :))', 'AWESOME TEAM', 'action-adventure', NULL, 'tích cực quay tay vận may sẽ đến', 1);
 
 -- --------------------------------------------------------
 
@@ -81,13 +98,10 @@ CREATE TABLE `book_borrow` (
 --
 
 INSERT INTO `book_borrow` (`id`, `mem_id`, `book_id`, `time_of_borrow`) VALUES
-(7, 167, 51, '2020-05-14 08:00:41'),
-(8, 168, 52, '2020-05-14 08:00:41'),
 (9, 154, 52, '2020-05-14 08:00:41'),
 (10, 147, 72, '2020-05-14 08:00:41'),
 (11, 161, 52, '2020-05-14 08:04:11'),
-(12, 161, 52, '2020-05-14 08:06:55'),
-(13, 161, 60, '2020-05-14 08:08:37');
+(12, 161, 52, '2020-05-14 08:06:55');
 
 -- --------------------------------------------------------
 
@@ -126,8 +140,8 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`mem_id`, `role`, `status`, `firstname`, `lastname`, `username`, `password`, `email`, `address`, `phone`, `ticket_history`) VALUES
 (147, 1, 0, 'overlord', '', 'admin', 'admin', '', '', '', ''),
-(152, 0, 1, 'haia_thuyen_', 'chyo_nhing_', 'ngang_giei_', '123', 'lonelycount@gmail.com', '', '', ''),
-(154, 0, 0, 'nghieu_nghinh_', 'ghuyen_nghing_', 'strei_ching_', '123', '', '', '', ''),
+(152, 0, 0, 'haia_thuyen_', 'chyo_nhing_', 'ngang_giei_', '123', 'lonelycount@gmail.com', '', '', ''),
+(154, 0, 1, 'nghieu_nghinh_', 'ghuyen_nghing_', 'strei_ching_', '123', '', '', '', ''),
 (155, 0, 0, 'gion_bron_', 'shuyen_nhing_', 'tring_ghon_', '123', '', '', '', ''),
 (156, 0, 0, 'giai_streight_', 'whang_ghon_', 'giyo_truyen_', '123', '', '', '', ''),
 (157, 0, 0, 'nhinh_whuyen_', 'brinh_trinh_', 'ieu_ton_', '123', '', '', '', ''),
@@ -183,6 +197,30 @@ CREATE TABLE `ticket_details` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ticket_dump`
+--
+
+CREATE TABLE `ticket_dump` (
+  `id` int(11) NOT NULL,
+  `mem_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
+  `time_of_borrow` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ticket_dump`
+--
+
+INSERT INTO `ticket_dump` (`id`, `mem_id`, `book_id`, `time_of_borrow`) VALUES
+(7, 167, 51, '2020-05-14 08:00:41'),
+(8, 168, 52, '2020-05-14 08:00:41'),
+(13, 161, 60, '2020-05-14 08:08:37'),
+(15, 161, 51, '2020-05-14 09:51:42'),
+(14, 161, 52, '2020-05-14 09:50:50');
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `ticket_details`
 --
 DROP TABLE IF EXISTS `ticket_details`;
@@ -234,13 +272,13 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `book_borrow`
 --
 ALTER TABLE `book_borrow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `borrow`

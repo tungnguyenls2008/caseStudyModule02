@@ -4,6 +4,7 @@
 <link href="../../css/userProfile.css" rel="stylesheet">
 <link href="../../css/style.css" rel="stylesheet">
 <!------ Include the above in your HEAD tag ---------->
+
 <?php
 session_start();
 include '../../model/connection/conn.php';
@@ -186,5 +187,5 @@ $user = $stmt->fetch();
         </div>
     </form>
 </div>
-<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas"  style="border:1px solid #d3d3d3;"></canvas>
 <script src="../../js/background.js"></script>

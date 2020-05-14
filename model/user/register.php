@@ -23,7 +23,7 @@ if (isset($_POST['register'])) {
     } else {
         echo "
 				<script>alert('Please fill up the required field!')</script>
-				<script>window.location = 'registration.php'</script>
+				<script>window.location = '../../view/user/registration.php'</script>
 			";
     }
 }
