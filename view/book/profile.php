@@ -28,7 +28,7 @@ $book = $stmt->fetch();
 
 <body>
 <?php session_start();
-include "../nav.php";?>
+include "../nav.php"; ?>
 
 <div class="container">
     <div class="card">

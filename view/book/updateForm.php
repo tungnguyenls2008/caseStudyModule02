@@ -73,7 +73,7 @@ $book = $stmt->fetch();
                 </div>
                 <br/>
                 <div class="form-group">
-                    <button class="btn btn-primary form-control" name="add">UPDATE YOUR BOOK</button>
+                    <button class="btn btn-primary form-control" name="update">UPDATE YOUR BOOK</button>
                 </div>
                 <a href="display.php">Display books list</a>
             </form>

@@ -67,7 +67,8 @@ if (!isset($_SESSION['user'])) {
             <h5>This is a list of registered user, nothing important, really.</h5>
             <br/>
             <div><?php if ($_SESSION['user']['role'] == 1): ?>
-                    <a class="btn btn-primary" href="../../model/user/addRandomUser.php">Add random user</a> <?php endif; ?>
+                    <a class="btn btn-primary" href="../../model/user/addRandomUser.php">Add random
+                        user</a> <?php endif; ?>
                 <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a>
                 <a class="btn btn-primary" href="../home.php">Back to home</a></div>
             <div style="display: inline-block;">
@@ -98,7 +99,8 @@ if (!isset($_SESSION['user'])) {
                                 <td><?php echo ++$key ?></td>
                                 <td><?php echo $item['firstname'] ?></td>
                                 <td><?php echo $item['lastname'] ?></td>
-                                <td><a href="../user/profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
+                                <td>
+                                    <a href="../user/profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
                                 </td>
                                 <td><?php if ($item['role'] == 1) {
                                         echo 'Admin';
@@ -107,10 +109,12 @@ if (!isset($_SESSION['user'])) {
                                     } ?>
                                 <td>
                                     <?php if ($_SESSION['user']['role'] == 1): ?>
-                                        <a class="btn btn-danger" href="../../model/user/delete.php?id=<?php echo $item['mem_id'] ?>">Delete</a>
+                                        <a class="btn btn-danger"
+                                           href="../../model/user/delete.php?id=<?php echo $item['mem_id'] ?>">Delete</a>
                                         <br>
                                         <a class="btn btn-primary"
-                                           href="../../model/user/makeAdmin.php?id=<?php echo $item['mem_id'] ?>">Make Admin</a>
+                                           href="../../model/user/makeAdmin.php?id=<?php echo $item['mem_id'] ?>">Make
+                                            Admin</a>
                                     <?php endif; ?>
                                 </td>
                             </tr>

@@ -12,6 +12,10 @@ $query = $conn->prepare($sql);
 $query->execute();
 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
+$memSql="SELECT * FROM `member`";
+$memQuery=$conn->prepare($memSql);
+$memQuery->execute();
+$memResults=$memQuery->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -100,7 +104,15 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 $query = $conn->prepare($sql);
                                 $query->execute();
                                 $results = $query->fetchAll(PDO::FETCH_ASSOC);
-                            } ?>
+
+                            }
+                            /*var_dump($memResults[0][$_POST['user-id']]);die();
+                            if ($memResults['id']==$_REQUEST['user-id']){
+                                if ($memResults['status']==0){
+                                    echo 'This member is blocked from using the system, proceed with caution';
+                                }
+                            }*/
+                            ?>
                                 <table class="gridtable" border="1px">
                                 <tr>
                                     <th>ID</th>
@@ -169,14 +181,14 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                     </tr>
                                 <?php endforeach; ?>
                                 <?php endif; ?></table>
-                                <tr>
-                                    <td><a class="btn btn-primary mr-5" href="../home.php">Back to home</a></td>
-                                    <td><a class="btn btn-danger mr-5" href="../../model/user/logout.php">Logout</a>
-                                    </td>
-                                </tr>
+                    <tr>
+                        <td><a class="btn btn-primary mr-5" href="../home.php">Back to home</a></td>
+                        <td><a class="btn btn-danger mr-5" href="../../model/user/logout.php">Logout</a>
+                        </td>
+                    </tr>
 
 
-                </tr>
+                    </tr>
                 </form>
             </div>
             <div>

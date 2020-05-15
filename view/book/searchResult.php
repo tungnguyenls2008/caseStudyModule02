@@ -81,14 +81,18 @@ if (!isset($_SESSION['book'])) {
                         $query->execute();
                         $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
-                    } ?><table style="display: inline-block;text-align: left"><tr>
-                    <?php if ($_SESSION['user']['role'] == 1): ?>
-                        <td><a class="btn btn-primary" href="addForm.php">ADD NEW BOOK</a></td>
-                        <td><a class="btn btn-warning" href="../../model/book/addRandomBook.php">Add random book</a></td>
-                        <?php endif; ?>
-                    <td><a class="btn btn-primary" href="../home.php">Back to home</a></td>
-                    <td><a class="btn btn-danger" href="../../model/user/logout.php">Logout</a></td>
-                        </tr></table>
+                    } ?>
+                    <table style="display: inline-block;text-align: left">
+                        <tr>
+                            <?php if ($_SESSION['user']['role'] == 1): ?>
+                                <td><a class="btn btn-primary" href="addForm.php">ADD NEW BOOK</a></td>
+                                <td><a class="btn btn-warning" href="../../model/book/addRandomBook.php">Add random
+                                        book</a></td>
+                            <?php endif; ?>
+                            <td><a class="btn btn-primary" href="../home.php">Back to home</a></td>
+                            <td><a class="btn btn-danger" href="../../model/user/logout.php">Logout</a></td>
+                        </tr>
+                    </table>
                     <table class="gridtable" border="1px">
                         <tr>
                             <th>No.</th>

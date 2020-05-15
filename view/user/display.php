@@ -72,71 +72,72 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
             <a class="btn btn-secondary" href="searchResult.php">SEARCH</a>
 
 
-        <?php if ($_SESSION['user']['role'] == 1): ?>
-            <a class="btn btn-warning" href="../../model/user/addRandomUser.php">Add random user</a>
-        <?php endif; ?>
+            <?php if ($_SESSION['user']['role'] == 1): ?>
+                <a class="btn btn-warning" href="../../model/user/addRandomUser.php">Add random user</a>
+            <?php endif; ?>
             <a class="btn btn-primary" href="../home.php">Back to home</a>
             <a class="btn btn-danger" href="../../model/user/logout.php">Logout</a><br>
-        <div style="display: inline-block;">
-            <form method="post">
-                <br>
-                <table class="gridtable" border="1px">
-                    <tr>
-                        <th>No.</th>
-                        <th>ID</th>
-                        <th>Avatar</th>
-                        <th>Username</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-
-                    <?php foreach ($results as $key => $item): ?>
+            <div style="display: inline-block;">
+                <form method="post">
+                    <br>
+                    <table class="gridtable" border="1px">
                         <tr>
-                            <td><?php echo ++$key ?></td>
-                            <td><?php echo $item['mem_id'] ?></td>
-                            <td><img alt="avatar" src="../../model/user/avatars/<?php echo $item['avatar'] ?>" width="100px"></td>
-                            <td>
-                                <a href="profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
-                            </td>
-                            <td><?php if ($item['role'] == 1) {
-                                    echo 'Admin';
-                                } else {
-                                    echo 'Member';
-                                } ?></td>
-                            <td><?php if ($item['status'] == 0) {
-                                    echo '<p style="color: #00A000">Active</p>';
-                                } else {
-                                    echo '<p style="color: #9A0000">Blocked</p>';
-                                } ?></td>
-                            <td>
-                                <?php if ($_SESSION['user']['role'] == 1):{ ?>
-                                    <a class="btn btn-danger"
-                                       href="../../model/user/delete.php?id=<?php echo $item['mem_id'] ?>">Delete</a>
-                                    <br><br>
-                                    <?php if ($item['status'] == 0): ?>
-                                        <a class="btn btn-danger"
-                                           href="../../model/user/block.php?id=<?php echo $item['mem_id'] ?>">Block</a>
-                                        <br><br>
-                                    <?php elseif ($item['status'] == 1): ?>
-                                        <a class="btn btn-secondary"
-                                           href="../../model/user/unblock.php?id=<?php echo $item['mem_id'] ?>">Unblock</a>
-                                        <br><br>
-                                    <?php endif; ?>
-                                    <a class="btn btn-primary"
-                                       href="../../model/user/makeAdmin.php?id=<?php echo $item['mem_id'] ?>">Make
-                                        Admin</a>
-                                <?php } endif; ?>
-                            </td>
+                            <th>No.</th>
+                            <th>ID</th>
+                            <th>Avatar</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
                         </tr>
-                    <?php endforeach; ?>
-                </table>
-            </form>
-        </div>
 
+                        <?php foreach ($results as $key => $item): ?>
+                            <tr>
+                                <td><?php echo ++$key ?></td>
+                                <td><?php echo $item['mem_id'] ?></td>
+                                <td><img alt="avatar" src="../../model/user/avatars/<?php echo $item['avatar'] ?>"
+                                         width="100px"></td>
+                                <td>
+                                    <a href="profile.php?id=<?php echo $item['mem_id'] ?>"> <?php echo $item['username'] ?></a>
+                                </td>
+                                <td><?php if ($item['role'] == 1) {
+                                        echo 'Admin';
+                                    } else {
+                                        echo 'Member';
+                                    } ?></td>
+                                <td><?php if ($item['status'] == 0) {
+                                        echo '<p style="color: #00A000">Active</p>';
+                                    } else {
+                                        echo '<p style="color: #9A0000">Blocked</p>';
+                                    } ?></td>
+                                <td>
+                                    <?php if ($_SESSION['user']['role'] == 1):{ ?>
+                                        <a class="btn btn-danger"
+                                           href="../../model/user/delete.php?id=<?php echo $item['mem_id'] ?>">Delete</a>
+                                        <br><br>
+                                        <?php if ($item['status'] == 0): ?>
+                                            <a class="btn btn-danger"
+                                               href="../../model/user/block.php?id=<?php echo $item['mem_id'] ?>">Block</a>
+                                            <br><br>
+                                        <?php elseif ($item['status'] == 1): ?>
+                                            <a class="btn btn-secondary"
+                                               href="../../model/user/unblock.php?id=<?php echo $item['mem_id'] ?>">Unblock</a>
+                                            <br><br>
+                                        <?php endif; ?>
+                                        <a class="btn btn-primary"
+                                           href="../../model/user/makeAdmin.php?id=<?php echo $item['mem_id'] ?>">Make
+                                            Admin</a>
+                                    <?php } endif; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </form>
+            </div>
+
+        </div>
     </div>
 </div>
-    </div>
     <?php } else : echo "You're blocked from reaching this information, please contact site admin for details.";
     endif; ?>
 <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>

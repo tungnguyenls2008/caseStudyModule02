@@ -109,7 +109,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                     } ?></td>
                                 <td><?php if ($_SESSION['user']['role'] == 1): ?>
                                         <a class="btn btn-primary"
-                                           href="../../model/borrow/delete.php?id=<?php echo $item['id'] ?>">send to
+                                           href="../../model/borrow/delete.php?id=<?php echo $item['id'] ?>&&book_id=<?php echo $item['book_id'] ?>">send to
                                             ticket
                                             dump</a><br>
                                     <?php endif; ?></td>

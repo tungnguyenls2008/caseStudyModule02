@@ -13,7 +13,7 @@
 
 <?php
 session_start();
-include '../nav.php'?>
+include '../nav.php' ?>
 
 <div class="container" style="text-align: center">
     <div class="col-md-12 well" style="display: inline-block">
