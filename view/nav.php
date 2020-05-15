@@ -24,7 +24,7 @@
                 session_start();
                 if ($_SESSION['user']):?>
                     <li class="nav-item">
-                        <img src="/caseStudy/model/user/avatars/<?php echo $_SESSION['user']['avatar'] ?>" width="50px">
+                        <img src="/caseStudy/model/user/avatars/<?php echo $_SESSION['user']['avatar'] ?>" width="50px" style="border-radius: 50%">
                     </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/caseStudy/view/user/profile.php?id=<?php echo $_SESSION['user']['mem_id'] ?>">Hello, <?php echo $_SESSION['user']['firstname'] ?></a>
