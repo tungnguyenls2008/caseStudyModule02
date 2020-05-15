@@ -21,10 +21,11 @@ if ($randomBookCategory == 1) {
 }
 $randomBookDescription = generateRandomString(50);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "INSERT INTO `books` (`id`, `name`,`author`,`category`,`cover`,`description`, `status`) VALUES (NULL,'$randomBookName','$randomBookAuthor','$randomBookCategory',NULL,'$randomBookDescription',1)";
+$sql = "INSERT INTO `books` (`id`, `name`,`author`,`category`,`cover`,`description`, `status`) VALUES (NULL,'$randomBookName','$randomBookAuthor','$randomBookCategory',DEFAULT,'$randomBookDescription',1)";
 $conn->exec($sql);
+$lastInsertedID=$conn->lastInsertId();
 $conn = null;
-header('Location: ../../view/book/display.php');
+header('Location: ../../view/book/profile.php?id='.$lastInsertedID);
 
 function generateRandomString($length = 10)
 {
