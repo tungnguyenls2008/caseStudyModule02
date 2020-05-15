@@ -1,12 +1,10 @@
 <?php
 session_start();
 require_once '../../model/connection/conn.php';
-include "coverUpload.php";
 if ($_SESSION['user']['role'] == 1) {
-if(ISSET($_POST['add'])){
+if(isset($_POST['add'])){
     if($_POST['name'] != "" || $_POST['author'] != ""|| $_POST['category'] != ""|| $_POST['cover'] != ""|| $_POST['description'] != ""|| $_POST['status'] != ""){
         try{
-
             $name = $_POST['name'];
             $status = $_POST['status'];
             $author=$_POST['author'];
@@ -14,7 +12,7 @@ if(ISSET($_POST['add'])){
             $cover=$_FILES['image']['name'];
             $description=$_POST['description'];
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+            include "coverUpload.php";
             $sql = "INSERT INTO `books` (`id`,`name`,`author`,`category`,`cover`,`description`, `status`) VALUES (NULL,'$name','$author','$category','$cover','$description' ,'$status')";
             $conn->exec($sql);
         }catch(PDOException $e){

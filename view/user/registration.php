@@ -20,7 +20,7 @@
         <hr style="border-top:1px dotted #ccc;"/>
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <form action="../../model/user/register.php" method="POST">
+            <form action="../../model/user/register.php" method="POST" enctype="multipart/form-data">
                 <h4 class="text-success">Register here...</h4>
                 <hr style="border-top:1px groovy #000;">
                 <div class="form-group">
@@ -42,6 +42,10 @@
                 <div class="form-group">
                     <label>Retype password</label>
                     <input type="password" class="form-control" name="retype-password"/>
+                </div>
+                <div class="form-group">
+                    <label>Avatar</label>
+                    <input type="file" class="form-control" name="image"/>
                 </div>
                 <div class="form-group">
                     <label>Email</label>

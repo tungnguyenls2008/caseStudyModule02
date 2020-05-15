@@ -30,7 +30,7 @@ $user = $stmt->fetch();
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="https://images.theconversation.com/files/140429/original/image-20161005-15879-23ovmp.jpg"
+                    <img src="../../model/user/avatars/<?php echo $user['avatar'] ?>"
                          alt=""/>
                     <div class="file btn btn-lg btn-primary">
                         Change Photo

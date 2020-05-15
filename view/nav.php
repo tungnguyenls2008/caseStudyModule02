@@ -1,11 +1,12 @@
+
 <link rel="stylesheet" type="text/css" href="/caseStudy/css/bootstrap.css"/>
 <link href="/caseStudy/css/style.css" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
 <div class="container">
-    <nav class="navbar navbar-expand-md navbar-light bg-warning">
+    <nav class=" navbar sticky-top navbar-expand-md navbar-light bg-warning ">
         <a href="/caseStudy/view/home.php">
         <img style="width: 120px" src="/caseStudy/img/logo.png" href="/caseStudy/view/home.php" alt="logo">
         </a>
@@ -19,7 +20,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/caseStudy/view/home.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <?php if ($_SESSION['user']): ?>
+                <?php
+                session_start();
+                if ($_SESSION['user']):?>
+                    <li class="nav-item">
+                        <img src="/caseStudy/model/user/avatars/<?php echo $_SESSION['user']['avatar'] ?>" width="50px">
+                    </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/caseStudy/view/user/profile.php?id=<?php echo $_SESSION['user']['mem_id'] ?>">Hello, <?php echo $_SESSION['user']['firstname'] ?></a>
                 </li>

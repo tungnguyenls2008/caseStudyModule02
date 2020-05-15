@@ -12,7 +12,7 @@ if (!isset($_SESSION['user'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"/>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>HOME</title>
+    <title>SEARCH</title>
     <link href="../../css/style.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

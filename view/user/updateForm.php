@@ -40,7 +40,7 @@ $user = $stmt->fetch();
                 </div>
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" class="form-control" name="username" value="<?php echo $user['username'] ?>"/>
+                    <input type="text" class="form-control" name="username" disabled value="<?php echo $user['username'] ?>"/>
                 </div>
                 <div class="form-group">
                     <label>Password</label>

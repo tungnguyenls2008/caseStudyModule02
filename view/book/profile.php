@@ -38,7 +38,7 @@ include "../nav.php";?>
 
                     <div class="preview-pic tab-content">
                         <div class="tab-pane active" id="pic-1"><img
-                                    src="https://edit.org/images/cat/book-covers-big-2019101610.jpg"/></div>
+                                    src="../../model/book/covers/<?php echo $book['cover'] ?>"/></div>
                     </div>
 
 

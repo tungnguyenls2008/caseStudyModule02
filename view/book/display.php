@@ -95,6 +95,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                         <tr>
                             <th>No.</th>
                             <th>ID</th>
+                            <th>Book Cover</th>
                             <th>Name</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -104,6 +105,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                             <tr>
                                 <td><?php echo ++$key ?></td>
                                 <td><?php echo $item['id'] ?></td>
+                                <td><img src="../../model/book/covers/<?php echo $item['cover'] ?>" width="100px"></td>
                                 <td><a href="profile.php?id=<?php echo $item['id'] ?>"> <?php echo $item['name'] ?></a>
                                 </td>
                                 <td><?php if ($item['status'] == 1) {

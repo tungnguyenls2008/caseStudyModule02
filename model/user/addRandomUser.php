@@ -11,7 +11,7 @@ if ($_SESSION['user'] == $_REQUEST['id']) {
     $randUserEmail = generateRandomString(6).'@gmail.com';
     $randUserPhone = '0'.rand(980100000,989999999);
     $randUserAddress = generateRandomString(20);
-    $sql = "INSERT INTO `member` (`mem_id`,`role`,`status`, `firstname`, `lastname`, `username`, `password`,`email`,`address`,`phone`,`ticket_history`) VALUES (NULL,0 ,0,'$randFirstName', '$randLastName', '$randUserName', '123','$randUserEmail','$randUserAddress','$randUserPhone',NULL) ";
+    $sql = "INSERT INTO `member` (`mem_id`,`role`,`status`, `firstname`, `lastname`, `username`, `password`,`avatar`,`email`,`address`,`phone`,`ticket_history`) VALUES (NULL,0 ,0,'$randFirstName', '$randLastName', '$randUserName', '123',DEFAULT,'$randUserEmail','$randUserAddress','$randUserPhone',NULL) ";
     $query = $conn->prepare($sql);
     $query->execute();
 $lastInsertedID=$conn->lastInsertId();
