@@ -113,7 +113,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <td>
                                     <?php if ($_SESSION['user']['role'] == 1):{ ?>
                                         <a class="btn btn-danger"
-                                           href="../../model/user/delete.php?id=<?php echo $item['mem_id'] ?>">Delete</a>
+                                           href="../../model/user/delete.php?id=<?php echo $item['mem_id'] ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
                                         <br><br>
                                         <?php if ($item['status'] == 0): ?>
                                             <a class="btn btn-danger"

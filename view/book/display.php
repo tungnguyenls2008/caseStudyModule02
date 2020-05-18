@@ -116,7 +116,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <td>
                                     <?php if ($_SESSION['user']['role'] == 1): ?>
                                         <a class="btn btn-danger"
-                                           href="../../model/book/delete.php?id=<?php echo $item['id'] ?>">Delete</a>
+                                           href="../../model/book/delete.php?id=<?php echo $item['id'] ?>" onclick="return confirm('Are you sure you want to delete this book?');">Delete</a>
                                         <br>
                                         <a class="btn btn-primary" href="updateForm.php?id=<?php echo $item['id'] ?>">Update</a>
                                     <?php endif; ?>
